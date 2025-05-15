@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HR Management</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f7f7f7;
+      }
+
+      header {
+        background-color: #1a1a1a;
+        color: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header h2 {
+        margin: 0;
+      }
+
+      nav a {
+        color: #ccc;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+
+      nav a:hover {
+        color: white;
+      }
+
+      .search-box {
+        display: flex;
+        align-items: center;
+      }
+
+      .search-box input {
+        padding: 5px 10px;
+        font-size: 16px;
+        margin-right: 5px;
+      }
+
+      .search-box button {
+        padding: 6px 12px;
+        font-size: 16px;
+        background-color: #333;
+        color: white;
+        border: 1px solid #ccc;
+        cursor: pointer;
+      }
+
+      .container {
+        padding: 30px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      .add-btn {
+        float: right;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      th,
+      td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f5f5f5;
+      }
+
+      .edit-btn {
+        background-color: #f4b400;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .delete-btn {
+        background-color: #e63946;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      /* Form popup */
+      .form-popup {
+        display: none;
+        position: fixed;
+        top: 15%;
+        left: 35%;
+        width: 30%;
+        background: white;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+
+      .form-popup .header {
+        background-color: #007bff;
+        color: white;
+        padding: 15px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .form-popup .form-body {
+        padding: 20px;
+      }
+
+      .form-popup input[type="text"],
+      .form-popup select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+      }
+
+      .form-popup .form-footer {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px 20px;
+      }
+
+      .form-popup .form-footer button {
+        padding: 8px 16px;
+        margin-left: 10px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .form-popup .save-btn {
+        background-color: #28a745;
+        color: white;
+      }
+
+      .form-popup .cancel-btn {
+        background-color: #6c757d;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>HR Management</h2>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+        <button>Search</button>
+      </div>
+    </header>
+
+    <div class="container">
+      <h1>Employee</h1>
+      <button class="add-btn" onclick="openForm()">+ Add</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Position</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Fatima Beatriz</td>
+            <td>Fatima Beatriz@gmail.com</td>
+            <td>0985674321</td>
+            <td>Staff</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Gabriel Hanna</td>
+            <td>Gabriel Hanna@gmail.com</td>
+            <td>0353674231</td>
+            <td>Staff</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Charles Diya</td>
+            <td>Charles Diya@gmail.com</td>
+            <td>0347658833</td>
+            <td>Staff</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Frank Lamdo</td>
+            <td>Frank Lamdo@gmail.com</td>
+            <td>0975444768</td>
+            <td>Manager</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Louis Tom</td>
+            <td>Louis Tom@gmail.com</td>
+            <td>0789568223</td>
+            <td>Staff</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Popup Form -->
+    <div class="form-popup" id="popupForm">
+      <div class="header">
+        <span>New Employee</span>
+        <span style="cursor: pointer" onclick="closeForm()">×</span>
+      </div>
+      <div class="form-body">
+        <label>Name</label>
+        <input type="text" />
+        <label>Email</label>
+        <input type="text" />
+        <label>Phone</label>
+        <input type="text" />
+        <label>Position</label>
+        <select>
+          <option>-- Select Position --</option>
+          <option>Staff</option>
+          <option>Manager</option>
+          <option>CEO</option>
+        </select>
+        <label>Sex</label><br />
+        <input type="radio" name="sex" /> Male
+        <input type="radio" name="sex" /> Female
+      </div>
+      <div class="form-footer">
+        <button class="save-btn">Save</button>
+        <button class="cancel-btn" onclick="closeForm()">Cancel</button>
+      </div>
+    </div>
+
+    <script>
+      function openForm() {
+        document.getElementById("popupForm").style.display = "block";
+      }
+      function closeForm() {
+        document.getElementById("popupForm").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
