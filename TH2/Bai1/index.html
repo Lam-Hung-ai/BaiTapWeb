@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Get in touch with us by filling contact form below</h2>
+        <form action="#" method="post">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="full-name" class="sr-only">Enter your full name</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="* Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="sr-only">Enter your email address</label>
+                    <input type="email" id="email" name="email" placeholder="* Enter your email address" required>
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <label for="subject" class="sr-only">Enter your subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter your subject">
+            </div>
+            <div class="form-group full-width">
+                <label for="message" class="sr-only">Your message here</label>
+                <textarea id="message" name="message" rows="8" placeholder="* Your message here..." required></textarea>
+            </div>
+            <div class="form-footer">
+                <button type="submit">Send message</button>
+                <p class="required-note">* Please fill all required form field, thanks!</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

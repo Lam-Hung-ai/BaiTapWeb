@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #222;
+
+}
+
+.container {
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: auto;
+  border-left: 3px solid #00c8ff; 
+  border-right: 3px solid #00c8ff; 
+  border-bottom: 5px solid #00c8ff; 
+  border-top: none;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 60px;
+  line-height: 1.4;
+}
+
+h2 {
+  text-align: left;
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: 60px;
+  line-height: 1.4;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  flex: 1; 
+  font-size: 15px;
+  line-height: 1.8;
+  min-width: 250px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.card h2 {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.card .author {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.card .position {
+  color: #409fff;
+  font-size: 13px;
+}
+
+.text-block {
+  flex: 1.5; 
+  font-size: 15px;
+  line-height: 1.8;
+  min-width: 300px;
+}
+
+.text-block strong {
+  font-weight: bold;
+}
+
