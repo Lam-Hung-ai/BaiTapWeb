@@ -1,0 +1,11 @@
+.app-wrapper-70 {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Để đảm bảo nó hoạt động tốt trên màn hình nhỏ, bạn có thể muốn thêm media query */
+@media (max-width: 768px) { /* Ví dụ cho màn hình nhỏ hơn hoặc bằng tablet */
+  .app-wrapper-70 {
+    width: 90%; /* Hoặc 95%, hoặc 100% tùy bạn */
+  }
+}
